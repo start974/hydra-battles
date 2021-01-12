@@ -19,7 +19,8 @@
 
 This contribution contains two parts:
 
-- An exploration of some properties of Kirby and Paris' hydra battles, with the help of the **Coq** Proof assistant. This development includes the study of several representations of ordinal numbers, and a part of the so-called _Ketonen and Solovay machinery_ (combinatorial properties of epsilon0).
+- An exploration of some properties of Kirby and Paris' hydra battles, with the help of the **Coq** Proof assistant. This development includes the study of several representations of ordinal numbers, and a part of the so-called _Ketonen and Solovay machinery_ (combinatorial properties of epsilon0). This part also hosts a part of Russel O'Connors work on Gödel's Incompleteness Theorems (specifically the libraries on primitive recursive functions and Peano Arithmetics)
+(please see https://coq-community/goedel ).
 
 - Some algorithms for computing _x^n_ with as few multiplications as possible (using _addition chains_).
 
