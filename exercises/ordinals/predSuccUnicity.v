@@ -19,13 +19,26 @@ Lemma Successor_unicity (alpha beta gamma : A):
   Successor beta alpha ->
   Successor gamma alpha ->
   gamma = beta.
-Admitted.
+Proof.
+  intros (leqBetaAlpha, HBetaAlpha) (leqGammaAlpha, HGammaAlpha).
+  destruct (lt_eq_lt_dec gamma beta) as [[Hlt | Heq] | Hgt].
+  - exfalso. now apply (HBetaAlpha gamma).
+  - assumption.
+  - exfalso. now apply (HGammaAlpha beta).
+Qed.
 
 Lemma Predecessor_unicity (alpha beta gamma : A):
   Successor beta alpha ->
   Successor beta gamma ->
   gamma = alpha.
-Admitted.
+Proof.
+  intros (leqBetaAlpha, HBetaAlpha) (leqBetaGamma, HBetaGamma).
+  destruct (lt_eq_lt_dec gamma alpha) as [[Hlt | Heq] | Hgt].
+  - exfalso. now apply (HBetaGamma alpha).
+  - assumption.
+  - exfalso. now apply (HBetaAlpha gamma).
+Qed.
+.
 
 
 

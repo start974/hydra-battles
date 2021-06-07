@@ -19,7 +19,14 @@ Section Proofs_of_lt_succ_le.
 
     
     Lemma lt_succ_le : forall gamma, gamma o< beta -> gamma o<= alpha.
-    Admitted.
+    Proof.
+    intros gamma HGammaBeta.
+    destruct (lt_eq_lt_dec gamma alpha) as [[Hlt | Heq] | Hgt].
+    - now left.
+    - subst. right.
+    - exfalso. destruct Halphabeta as (HleqAlphaBeta, HAlphaBeta). 
+      now apply (HAlphaBeta gamma).
+    Qed.
 
   End Proofs.
 
