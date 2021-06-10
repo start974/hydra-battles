@@ -22,7 +22,15 @@ Section On_alpha.
     (forall beta,
         beta t1< alpha ->
         Infinite (fun gamma =>  beta t1< gamma t1< alpha)).
-  Admitted.
+  Proof.
+  split.
+  - intros LimitAlpha beta leqBetaAlpha. exists (succ). split.
+    * intros x y eq. induction x, y; now inversion eq.
+    * intros i. split.
+      + admit.
+      + admit.
+  - intros H. specialize (H 0). admit.
+  Qed.
   
 End On_alpha.
 
